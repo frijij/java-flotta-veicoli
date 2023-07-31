@@ -7,12 +7,12 @@ public class Veicolo {
      */
 
     // ATTRIBUTI
-    private int numeroTarga;
+    private String numeroTarga;
     private int annoImmatricolazione;
 
     // COSTRUTTORI
 
-    public Veicolo(int numeroTarga, int annoImmatricolazione) {
+    public Veicolo(String numeroTarga, int annoImmatricolazione) {
         this.numeroTarga = numeroTarga;
         this.annoImmatricolazione = annoImmatricolazione;
     }
@@ -20,7 +20,7 @@ public class Veicolo {
 
     // GETTER E SETTER
 
-    public int getNumeroTarga() {
+    public String getNumeroTarga() {
         return numeroTarga;
     }
 

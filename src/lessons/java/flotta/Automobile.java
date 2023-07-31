@@ -9,7 +9,7 @@ public class Automobile extends Veicolo{
     private int numeroPorte;
 
     // COSTRUTTORI
-        public Automobile(int numeroTarga, int annoImmatricolazione, int numeroPorte) {
+        public Automobile(String numeroTarga, int annoImmatricolazione, int numeroPorte) {
         super(numeroTarga, annoImmatricolazione);
         this.numeroPorte=numeroPorte;
     }
@@ -21,4 +21,11 @@ public class Automobile extends Veicolo{
     }
 
     // METODI
+
+    @Override
+    public String toString() {
+        return "Automobile{" + "Targa: " + getNumeroTarga() + "; Anno di immatricolazione: " + getAnnoImmatricolazione() +
+                "; Porte: " + numeroPorte +
+                '}';
+    }
 }

@@ -7,7 +7,7 @@ public class Motocicletta extends Veicolo{
     private boolean conCavalletto;
 
     // COSTRUTTORI
-    public Motocicletta(int numeroTarga, int annoImmatricolazione, boolean conCavalletto){
+    public Motocicletta(String numeroTarga, int annoImmatricolazione, boolean conCavalletto){
         super(numeroTarga,annoImmatricolazione);
         this.conCavalletto=conCavalletto;
     }
@@ -19,4 +19,10 @@ public class Motocicletta extends Veicolo{
 
     // METODI
 
+    @Override
+    public String toString() {
+        return "Motocicletta{" + "Targa: " + getNumeroTarga() + "; Anno di immatricolazione: " + getAnnoImmatricolazione() +
+                "; Cavalletto: " + conCavalletto +
+                '}';
+    }
 }
