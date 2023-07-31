@@ -19,6 +19,10 @@ public class Main {
         gestore.aggiungiVeicolo(yamaha);
         gestore.aggiungiVeicolo(panda);
 
+        System.out.println("Questa è la tua flotta: " + gestore);
+
+        gestore.trovaTarga("ct210jw");
+
 
 
     }
