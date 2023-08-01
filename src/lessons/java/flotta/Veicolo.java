@@ -29,4 +29,5 @@ public class Veicolo {
     }
 
     // METODI
+
 }

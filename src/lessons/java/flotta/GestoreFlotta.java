@@ -13,8 +13,14 @@ public class GestoreFlotta {
         contare quanti veicoli ci sono di un determinato tipo (automobile o motocicletta)
         trovare un veicolo specifico tramite il numero di targa
          */
-    List<Veicolo> veicoli= new ArrayList<>();
 
+    //ATTRIBUTI
+    List<Veicolo> veicoli;
+
+    // COSTRUTTORI
+    public GestoreFlotta(){
+    veicoli= new ArrayList<>();
+    }
     public List<Veicolo> getVeicoli() {
         return veicoli;
     }
@@ -23,34 +29,34 @@ public class GestoreFlotta {
     // aggiungere nuovi veicoli alla flotta
     public void aggiungiVeicolo(Veicolo veicolo){
         veicoli.add(veicolo);
-        System.out.println(veicoli);
     }
 
     // contare veicoli per tipo all'interno della flotta
-/*
-public int contaVeicoli(Class tipo){
+
+    public int contaVeicoli(String tipo){
         int conteggio = 0;
         for (Veicolo veicolo:veicoli) {
-            String tipoVeicolo = veicolo.getClass().getName();
-            if (tipoVeicolo.equals(tipo)){
-            conteggio +=1;
+            if (tipo.equals(veicolo.getClass().getSimpleName())){
+            conteggio ++;
             }
         }
     return conteggio;
-}
-*/
+    }
 
     // trova veicoli in base alla targa
 
-    public void trovaTarga(String numeroTarga){
+    public Veicolo trovaTarga(String numeroTarga){
         boolean trovato=false;
-        for (Veicolo veicolo : veicoli){
-            if (veicolo.getNumeroTarga() == numeroTarga){
+        int contatore=0;
+        Veicolo veicoloCercato=null;
+        while (!trovato && contatore<veicoli.size()){
+            if(numeroTarga.equals(veicoli.get(contatore).getNumeroTarga())){
+                veicoloCercato = veicoli.get(contatore);
                 trovato = true;
-                System.out.println("La targa inserita corrisponde al seguente veicolo: " + veicolo);
-                break;
             }
+            contatore++;
         }
+        return veicoloCercato;
     }
 
 
